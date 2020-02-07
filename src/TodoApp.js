@@ -5,7 +5,7 @@ import AddTodo from "./containers/AddTodo";
 export default class TodoApp extends Component {
   state = {
     todos: [],
-    visibilityFilter='SHOW_ALL_TODOS'
+    visibilityFilter: "SHOW_ALL_TODOS"
   };
   render() {
     return (
