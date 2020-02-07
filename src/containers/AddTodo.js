@@ -16,6 +16,7 @@ class AddTodo extends Component {
 
   addTodo = text => {
     this.props.dispatch({ type: "ADD_TODO", text });
+    this.setState({ text: "" });
   };
 
   render() {
@@ -28,7 +29,7 @@ class AddTodo extends Component {
           placeholder="do something now!"
           style={styles.input}
         />
-        <TouchableOpacity onPress={() => alert("added todo")}>
+        <TouchableOpacity onPress={() => this.addTodo(this.state.text)}>
           <View style={{ height: 50, backgroundColor: "#eaeaea" }}>
             <Ionicons name="md-add" size={27.5} style={styles.plusIcon} />
           </View>
@@ -37,7 +38,7 @@ class AddTodo extends Component {
     );
   }
 }
-export default AddTodo;
+export default connect()(AddTodo);
 
 const styles = StyleSheet.create({
   container: {
